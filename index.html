@@ -1,3 +1,26 @@
+<?php
+session_start();
+
+if(isset($_SESSION["user"]) && $_SESSION["user"]!=""){
+
+    if($_SESSION["usertype"]=="p"){
+        header("location: patient/index.php");
+        exit();
+    }
+
+    if($_SESSION["usertype"]=="d"){
+        header("location: doctor/index.php");
+        exit();
+    }
+
+    if($_SESSION["usertype"]=="a"){
+        header("location: admin/index.php");
+        exit();
+    }
+
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
